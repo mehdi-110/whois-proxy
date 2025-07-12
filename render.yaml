@@ -1,0 +1,10 @@
+services:
+  - type: web
+    name: whois-proxy-app
+    env: python
+    buildCommand: ""
+    startCommand: gunicorn app.main:app --bind 0.0.0.0:$PORT
+    autoDeploy: true
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.11
